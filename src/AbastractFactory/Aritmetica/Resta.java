@@ -9,9 +9,9 @@ package AbastractFactory.Aritmetica;
  *
  * @author LN710Q
  */
-public class Suma implements Aritmetica {
+public class Resta implements Aritmetica {
     @Override
-    public int resultado(int val1, int val2){
-        return val1 +val2;
+    public int resultado (int val1, int val2){
+        return val1-val2;
     }
 }
