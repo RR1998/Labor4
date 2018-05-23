@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import AbastractFactory.Aritmetica.*;
 
 /**
  *
@@ -37,12 +38,13 @@ public class Ventana extends JPanel {
             }
         });
         textfield1.setEditable(true);
-        textfield2.setEditable(false);
+        textfield2.setEditable(true);
         add(bton);
         add(textfield1);
         add(textfield2);
         setLayout(null);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        Suma(Integer.parseInt(textfield1.getText()),Integer.parseInt(textfield2.getText()));
         
     }
 }
