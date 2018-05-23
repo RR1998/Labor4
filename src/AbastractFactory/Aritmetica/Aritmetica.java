@@ -10,5 +10,5 @@ package AbastractFactory.Aritmetica;
  * @author LN710Q
  */
 public interface Aritmetica {
-    
+    int resultado(int val1, int val2);
 }
