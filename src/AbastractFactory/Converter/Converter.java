@@ -10,5 +10,5 @@ package AbastractFactory.Converter;
  * @author LN710Q
  */
 public interface Converter {
-    
+    void convertir();
 }
