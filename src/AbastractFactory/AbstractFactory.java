@@ -9,9 +9,9 @@ import AbastractFactory.Aritmetica.Aritmetica;
 import AbastractFactory.Converter.Converter;
 /**
  *
- * @author LN710Q
+ * @author Roberto Alexander Rubio Castillo 00259517@uca.edu.sv
  */
 public interface AbstractFactory {
-    Aritmetica getShape(int val1, int val2);
-    Converter getColor(int val1, int val2);
+    Aritmetica getAritmetica(String Type, int val1, int val2);
+    Converter getConversion(String Type, int ResultadoA);
 }

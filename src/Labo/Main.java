@@ -9,7 +9,7 @@ import GUI.Ventana;
 import javax.swing.JFrame;
 /**
  *
- * @author LN710Q
+ * @author Roberto Alexander Rubio Castillo 00259517@uca.edu.sv
  */
 public class Main {
 

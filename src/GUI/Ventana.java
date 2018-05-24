@@ -15,7 +15,7 @@ import AbastractFactory.Aritmetica.*;
 
 /**
  *
- * @author LN710Q
+ * @author Roberto Alexander Rubio Castillo 00259517@uca.edu.sv
  */
 public class Ventana extends JPanel {
     private int WIDTH = 300, HEIGHT = 300;
@@ -44,7 +44,7 @@ public class Ventana extends JPanel {
         add(textfield2);
         setLayout(null);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
-        Suma(Integer.parseInt(textfield1.getText()),Integer.parseInt(textfield2.getText()));
+        //Suma(Integer.parseInt(textfield1.getText()),Integer.parseInt(textfield2.getText()));
         
     }
 }

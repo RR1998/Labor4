@@ -7,8 +7,8 @@ package AbastractFactory.Converter;
 
 /**
  *
- * @author LN710Q
+ * @author Roberto Alexander Rubio Castillo 00259517@uca.edu.sv
  */
 public interface Converter {
-    void convertir();
+    void convertir(int Resultado);
 }
