@@ -11,7 +11,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import AbastractFactory.Aritmetica.*;
 
 /**
  *
@@ -21,30 +20,34 @@ public class Ventana extends JPanel {
     private int WIDTH = 300, HEIGHT = 300;
     private int widthTF = 120, heightTF = 80;
     private int widthBT = 60, heightBT = 30;
-    JButton bton = new JButton();
-    JTextField textfield1, textfield2;
+    JButton BotonSuma, BotonResta, BotonDivision, BotonMultipliacion, Binario;
+    JTextField Val1, Resultado, Val2;
     
     public Ventana(){
-        bton = new JButton("Copiear");
-        textfield2 = new JTextField();
-        textfield1 = new JTextField();
-        textfield2.setBounds (100, 200, widthTF, heightTF);
-        textfield1.setBounds (120,40, widthTF, heightTF);
-        bton.setBounds(123, 125, widthBT, heightBT);
-        bton.addActionListener(new ActionListener(){
+        BotonSuma = new JButton("Sumar");
+        BotonResta = new JButton("Restar");
+        BotonDivision = new JButton("Dividir");
+        BotonMultipliacion = new JButton("Multiplicar");
+        Val1 = new JTextField();
+        Val2 = new JTextField();
+        Resultado = new JTextField();
+        Resultado.setBounds (100, 200, widthTF, heightTF);
+        Val1.setBounds (120,40, widthTF, heightTF);
+        BotonSuma.setBounds(123, 125, widthBT, heightBT);
+        BotonSuma.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                textfield2.setText(textfield1.getText());
+                Resultado.setText(Val1.getText());
             }
         });
-        textfield1.setEditable(true);
-        textfield2.setEditable(true);
-        add(bton);
-        add(textfield1);
-        add(textfield2);
+        Val1.setEditable(true);
+        Resultado.setEditable(true);
+        add(BotonSuma);
+        add(Val1);
+        add(Resultado);
         setLayout(null);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
-        //Suma(Integer.parseInt(textfield1.getText()),Integer.parseInt(textfield2.getText()));
+        //Suma(Integer.parseInt(Val1.getText()),Integer.parseInt(Resultado.getText()));
         
     }
 }

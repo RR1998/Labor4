@@ -5,10 +5,24 @@
  */
 package FactoryGenerator;
 
+import AbastractFactory.AbstractFactory;
+import AbastractFactory.Aritmetica.GeneradorAritmetico;
+import AbastractFactory.Converter.GeneradorBinario;
+
 /**
  *
  * @author Roberto Alexander Rubio Castillo 00259517@uca.edu.sv
  */
+
 public class FactoryGenerator {
+    public static AbstractFactory getFactory(String Type){
+        switch (Type){
+            case "Aritmetica":
+                return new GeneradorAritmetico();
+            case "Binario":
+                return new GeneradorBinario();
+        }
+        return null;
+    }
     
 }

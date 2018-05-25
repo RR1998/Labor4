@@ -6,7 +6,7 @@ import AbastractFactory.Aritmetica.Aritmetica;
 
 public class GeneradorBinario implements AbstractFactory{
     @Override
-    public Converter getConversion(String Type, int ResultadoA){
+    public Converter getConversion(int ResultadoA){
         return new Binario();
     }
     @Override

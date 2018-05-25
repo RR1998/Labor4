@@ -6,7 +6,7 @@ import AbastractFactory.Converter.Converter;
 public class GeneradorAritmetico implements AbstractFactory{
     //Converter
     @Override
-    public Converter getConversion(String Type, int ResultadoA){
+    public Converter getConversion(int ResultadoA){
         return null;
     }
     //Aritmetico
