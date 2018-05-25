@@ -10,5 +10,5 @@ package AbastractFactory.Converter;
  * @author Roberto Alexander Rubio Castillo 00259517@uca.edu.sv
  */
 public interface Converter {
-    void convertir(int Resultado);
+    String Convertir(int Resultado);
 }
