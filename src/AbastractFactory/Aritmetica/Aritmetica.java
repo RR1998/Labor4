@@ -10,5 +10,5 @@ package AbastractFactory.Aritmetica;
  * @author Roberto Alexander Rubio Castillo 00259517@uca.edu.sv
  */
 public interface Aritmetica {
-    int Resultado(int val1, int val2);
+    int  Resultado(int val1, int val2);
 }

@@ -11,6 +11,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import AbastractFactory.AbstractFactory;
+import AbastractFactory.Aritmetica.Aritmetica;
+import AbastractFactory.Aritmetica.GeneradorAritmetico;
+import FactoryGenerator.FactoryGenerator;
 
 /**
  *
@@ -35,20 +39,38 @@ public class Ventana extends JPanel {
         Resultado.setBounds (100, 200, widthTF, heightTF);
         Val1.setBounds (120,40, widthTF, heightTF);
         BotonSuma.setBounds(123, 125, widthBT, heightBT);
-        BotonSuma.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Resultado.setText(Val1.getText());
-            }
+
+        BotonSuma.addActionListener(e -> {
+            AbstractFactory Factory;
+            Factory = FactoryGenerator.getFactory("Aritmetica");
+            Aritmetica Suma = Factory.getAritmetica("Suma");
+            Resultado.setText(Integer.toString(Suma.Resultado(Integer.parseInt(Val1.getText()), Integer.parseInt(Val2.getText()))));
+        });
+        BotonResta.addActionListener(e -> {
+            AbstractFactory Factory;
+            Factory = FactoryGenerator.getFactory("Aritmetica");
+            Aritmetica Resta = Factory.getAritmetica("Resta");
+            Resultado.setText(Integer.toString(Resta.Resultado(Integer.parseInt(Val1.getText()), Integer.parseInt(Val2.getText()))));
+            });
+        BotonMultipliacion.addActionListener(e -> { //e-> es igual a new ActionListener
+            AbstractFactory Factory;
+            Factory = FactoryGenerator.getFactory("Aritmetica");
+            Aritmetica Multiplicacion = Factory.getAritmetica("Multiplicacion");
+            Resultado.setText(Integer.toString(Multiplicacion.Resultado(Integer.parseInt(Val1.getText()), Integer.parseInt(Val2.getText()))));
+        });
+        BotonDivision.addActionListener(e -> {
+            AbstractFactory Factory;
+            Factory = FactoryGenerator.getFactory("Aritmetica");
+            Aritmetica Division = Factory.getAritmetica("Division");
+            Resultado.setText(Integer.toString(Division.Resultado(Integer.parseInt(Val1.getText()), Integer.parseInt(Val2.getText()))));
         });
         Val1.setEditable(true);
+        Val2.setEditable(true);
         Resultado.setEditable(true);
         add(BotonSuma);
         add(Val1);
         add(Resultado);
         setLayout(null);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
-        //Suma(Integer.parseInt(Val1.getText()),Integer.parseInt(Resultado.getText()));
-        
     }
 }

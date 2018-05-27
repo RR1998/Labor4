@@ -12,6 +12,6 @@ import AbastractFactory.Converter.Converter;
  * @author Roberto Alexander Rubio Castillo 00259517@uca.edu.sv
  */
 public interface AbstractFactory {
-    Aritmetica getAritmetica(String Type, int val1, int val2);
+    Aritmetica getAritmetica(String Type);
     Converter getConversion(int ResultadoA);
 }

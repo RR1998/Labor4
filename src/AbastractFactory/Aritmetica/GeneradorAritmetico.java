@@ -6,12 +6,12 @@ import AbastractFactory.Converter.Converter;
 public class GeneradorAritmetico implements AbstractFactory{
     //Converter
     @Override
-    public Converter getConversion(int ResultadoA){
+    public  Converter getConversion(int ResultadoA){
         return null;
     }
     //Aritmetico
     @Override
-    public Aritmetica getAritmetica(String Type, int val1, int val2){
+    public  Aritmetica getAritmetica(String Type){
         switch (Type){
             case ("Suma"):
                 return new Suma();
