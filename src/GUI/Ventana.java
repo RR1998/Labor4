@@ -21,7 +21,7 @@ public class Ventana extends JPanel {
     private int widthTF = 120, heightTF = 80;
     private int widthBT = 60, heightBT = 30;
     JButton BotonSuma, BotonResta, BotonDivision, BotonMultipliacion, Binario;
-    JTextField Val1, Resultado, Val2;
+    JTextField Val1, Val2, Resultado, RBin;// val1 el valor del txtbox1, val2 calor del txtbox2, resultado el total de lo operado, RBin resultado en binario
     
     public Ventana(){
         BotonSuma = new JButton("Sumar");
@@ -31,6 +31,7 @@ public class Ventana extends JPanel {
         Val1 = new JTextField();
         Val2 = new JTextField();
         Resultado = new JTextField();
+        RBin = new JTextField();
         Resultado.setBounds (100, 200, widthTF, heightTF);
         Val1.setBounds (120,40, widthTF, heightTF);
         BotonSuma.setBounds(123, 125, widthBT, heightBT);
