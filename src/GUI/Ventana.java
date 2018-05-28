@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import AbastractFactory.AbstractFactory;
 import AbastractFactory.Aritmetica.Aritmetica;
-import AbastractFactory.Aritmetica.GeneradorAritmetico;
+import AbastractFactory.Converter.Converter;
 import FactoryGenerator.FactoryGenerator;
 
 /**
@@ -33,6 +33,7 @@ public class Ventana extends JPanel {
         BotonResta = new JButton("Restar");
         BotonDivision = new JButton("Dividir");
         BotonMultipliacion = new JButton("Multiplicar");
+        Binario = new JButton("Binario");
         Val1 = new JTextField();
         Val2 = new JTextField();
         Resultado = new JTextField();
@@ -44,6 +45,7 @@ public class Ventana extends JPanel {
         BotonResta.setBounds(220, 125, widthBT, heightBT);
         BotonMultipliacion.setBounds(320, 125, widthBT, widthBT);
         BotonDivision.setBounds(420, 125, widthBT, widthBT);
+        Binario.setBounds(520, 125, widthBT, widthBT);
 
         BotonSuma.addActionListener(e -> {
             AbstractFactory Factory;
@@ -71,6 +73,13 @@ public class Ventana extends JPanel {
             Factory = FactoryGenerator.getFactory("Aritmetica");
             Aritmetica Division = Factory.getAritmetica("Division");
             Resultado.setText(Integer.toString(Division.Resultado(Integer.parseInt(Val1.getText()), Integer.parseInt(Val2.getText()))));
+        });
+
+        Binario.addActionListener(e -> {
+            AbstractFactory Factory;
+            Factory = FactoryGenerator.getFactory("Binario");
+            Converter Binario = Factory.getConversion();
+            Resultado.setText(Binario.Convertir(Integer.parseInt(Val1.getText())));
         });
 
         Val1.setEditable(true);

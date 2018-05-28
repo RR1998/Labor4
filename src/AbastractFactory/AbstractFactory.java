@@ -13,5 +13,5 @@ import AbastractFactory.Converter.Converter;
  */
 public interface AbstractFactory {
     Aritmetica getAritmetica(String Type);
-    Converter getConversion(int ResultadoA);
+    Converter getConversion();
 }
