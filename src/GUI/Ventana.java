@@ -23,11 +23,12 @@ import FactoryGenerator.FactoryGenerator;
 public class Ventana extends JPanel {
     private int WIDTH = 300, HEIGHT = 300;
     private int widthTF = 120, heightTF = 80;
-    private int widthBT = 60, heightBT = 30;
+    private int widthBT = 90, heightBT = 30;
     JButton BotonSuma, BotonResta, BotonDivision, BotonMultipliacion, Binario;
     JTextField Val1, Val2, Resultado, RBin;// val1 el valor del txtbox1, val2 calor del txtbox2, resultado el total de lo operado, RBin resultado en binario
     
     public Ventana(){
+        super();
         BotonSuma = new JButton("Sumar");
         BotonResta = new JButton("Restar");
         BotonDivision = new JButton("Dividir");
@@ -38,7 +39,11 @@ public class Ventana extends JPanel {
         RBin = new JTextField();
         Resultado.setBounds (100, 200, widthTF, heightTF);
         Val1.setBounds (120,40, widthTF, heightTF);
-        BotonSuma.setBounds(123, 125, widthBT, heightBT);
+        Val2.setBounds(240, 40, widthTF, heightTF);
+        BotonSuma.setBounds(120, 125, widthBT, heightBT);
+        BotonResta.setBounds(220, 125, widthBT, heightBT);
+        BotonMultipliacion.setBounds(320, 125, widthBT, widthBT);
+        BotonDivision.setBounds(420, 125, widthBT, widthBT);
 
         BotonSuma.addActionListener(e -> {
             AbstractFactory Factory;
@@ -46,31 +51,47 @@ public class Ventana extends JPanel {
             Aritmetica Suma = Factory.getAritmetica("Suma");
             Resultado.setText(Integer.toString(Suma.Resultado(Integer.parseInt(Val1.getText()), Integer.parseInt(Val2.getText()))));
         });
+
         BotonResta.addActionListener(e -> {
             AbstractFactory Factory;
             Factory = FactoryGenerator.getFactory("Aritmetica");
             Aritmetica Resta = Factory.getAritmetica("Resta");
             Resultado.setText(Integer.toString(Resta.Resultado(Integer.parseInt(Val1.getText()), Integer.parseInt(Val2.getText()))));
             });
+
         BotonMultipliacion.addActionListener(e -> { //e-> es igual a new ActionListener
             AbstractFactory Factory;
             Factory = FactoryGenerator.getFactory("Aritmetica");
             Aritmetica Multiplicacion = Factory.getAritmetica("Multiplicacion");
             Resultado.setText(Integer.toString(Multiplicacion.Resultado(Integer.parseInt(Val1.getText()), Integer.parseInt(Val2.getText()))));
         });
+
         BotonDivision.addActionListener(e -> {
             AbstractFactory Factory;
             Factory = FactoryGenerator.getFactory("Aritmetica");
             Aritmetica Division = Factory.getAritmetica("Division");
             Resultado.setText(Integer.toString(Division.Resultado(Integer.parseInt(Val1.getText()), Integer.parseInt(Val2.getText()))));
         });
+
         Val1.setEditable(true);
         Val2.setEditable(true);
         Resultado.setEditable(true);
         add(BotonSuma);
+        add(BotonResta);
+        add(BotonMultipliacion);
+        add(BotonDivision);
         add(Val1);
+        add(Val2);
         add(Resultado);
         setLayout(null);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
+    }
+    public static void main(String args[]){
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new Ventana().setVisible(true);
+            }
+        });
     }
 }
