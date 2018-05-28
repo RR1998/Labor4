@@ -5,12 +5,7 @@
  */
 package GUI;
 
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
+import javax.swing.*;
 import AbastractFactory.AbstractFactory;
 import AbastractFactory.Aritmetica.Aritmetica;
 import AbastractFactory.Converter.Converter;
@@ -20,8 +15,8 @@ import FactoryGenerator.FactoryGenerator;
  *
  * @author Roberto Alexander Rubio Castillo 00259517@uca.edu.sv
  */
-public class Ventana extends JPanel {
-    private int WIDTH = 300, HEIGHT = 300;
+public class Ventana extends JFrame {
+    private int WIDTH = 450, HEIGHT = 350;
     private int widthTF = 120, heightTF = 80;
     private int widthBT = 90, heightBT = 30;
     JButton BotonSuma, BotonResta, BotonDivision, BotonMultipliacion, Binario;
@@ -29,6 +24,12 @@ public class Ventana extends JPanel {
     
     public Ventana(){
         super();
+        setTitle("Calculadora");
+        setSize(WIDTH, HEIGHT);
+        setLocationRelativeTo(null);
+        setLayout(null);
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         BotonSuma = new JButton("Sumar");
         BotonResta = new JButton("Restar");
         BotonDivision = new JButton("Dividir");
@@ -38,14 +39,14 @@ public class Ventana extends JPanel {
         Val2 = new JTextField();
         Resultado = new JTextField();
         RBin = new JTextField();
-        Resultado.setBounds (100, 200, widthTF, heightTF);
         Val1.setBounds (120,40, widthTF, heightTF);
         Val2.setBounds(240, 40, widthTF, heightTF);
+        Resultado.setBounds (120, 200, widthTF, heightTF);
         BotonSuma.setBounds(120, 125, widthBT, heightBT);
         BotonResta.setBounds(220, 125, widthBT, heightBT);
-        BotonMultipliacion.setBounds(320, 125, widthBT, widthBT);
-        BotonDivision.setBounds(420, 125, widthBT, widthBT);
-        Binario.setBounds(520, 125, widthBT, widthBT);
+        BotonMultipliacion.setBounds(120, 150, widthBT, heightBT);
+        BotonDivision.setBounds(220, 150, widthBT, heightBT);
+        Binario.setBounds(320, 125, widthBT, heightBT);
 
         BotonSuma.addActionListener(e -> {
             AbstractFactory Factory;
@@ -84,23 +85,20 @@ public class Ventana extends JPanel {
 
         Val1.setEditable(true);
         Val2.setEditable(true);
-        Resultado.setEditable(true);
+        Resultado.setEditable(false);
         add(BotonSuma);
         add(BotonResta);
         add(BotonMultipliacion);
         add(BotonDivision);
+        add(Binario);
         add(Val1);
         add(Val2);
         add(Resultado);
-        setLayout(null);
+        /*setLayout(null);
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
+        */
     }
     public static void main(String args[]){
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new Ventana().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> new Ventana().setVisible(true));
     }
 }
